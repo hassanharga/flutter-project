@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:meals/screens/tabs.dart';
+
 final theme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MEALS',
       theme: theme,
-      home: const Text('Flutter Demo Home Page'),
+      home: const TabsScreen(),
     );
   }
 }
