@@ -1,21 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:meals/screens/tabs.dart';
+import './widgets/grocery_list.dart';
 
-final theme = ThemeData(
-  useMaterial3: true,
-  colorScheme: ColorScheme.fromSeed(
-    brightness: Brightness.dark,
-    seedColor: const Color.fromARGB(255, 131, 57, 0),
-  ),
-  textTheme: GoogleFonts.latoTextTheme(),
-);
-
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,9 +10,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MEALS',
-      theme: theme,
-      home: const TabsScreen(),
+      title: 'Flutter Groceries',
+      theme: ThemeData.dark().copyWith(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 147, 229, 250),
+          surface: const Color.fromARGB(255, 42, 51, 59),
+          brightness: Brightness.dark,
+        ),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60),
+      ),
+      home: const GroceryList(),
     );
   }
 }

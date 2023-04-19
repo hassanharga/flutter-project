@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:meals/models/meals.dart';
-import 'package:meals/providers/favorite_provider.dart';
+import '../models/meals.dart';
+import '../providers/favorite_provider.dart';
 
 class MealDetailsScreen extends ConsumerWidget {
   final Meal meal;
