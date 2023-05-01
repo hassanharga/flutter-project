@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:meals/data/categories.dart';
+import '../../lib_grocery_list/data/categories.dart';
 
 import '../models/grocery_item.dart';
 import '../widgets/new_item.dart';
