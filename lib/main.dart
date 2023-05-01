@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import './widgets/grocery_list.dart';
+import './screens/places.dart';
 
-void main() => runApp(const MyApp());
+final colorScheme = ColorScheme.fromSeed(
+  brightness: Brightness.dark,
+  seedColor: const Color.fromARGB(255, 102, 6, 247),
+  background: const Color.fromARGB(255, 56, 49, 66),
+);
+
+final theme = ThemeData.dark().copyWith(
+  useMaterial3: true,
+  colorScheme: colorScheme,
+  scaffoldBackgroundColor: colorScheme.background,
+  textTheme: GoogleFonts.ubuntuCondensedTextTheme().copyWith(
+    titleSmall: GoogleFonts.ubuntuCondensed(fontWeight: FontWeight.bold),
+    titleMedium: GoogleFonts.ubuntuCondensed(fontWeight: FontWeight.bold),
+    titleLarge: GoogleFonts.ubuntuCondensed(fontWeight: FontWeight.bold),
+  ),
+);
+
+void main() => runApp(const ProviderScope(child: MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,17 +29,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Groceries',
-      theme: ThemeData.dark().copyWith(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 147, 229, 250),
-          surface: const Color.fromARGB(255, 42, 51, 59),
-          brightness: Brightness.dark,
-        ),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60),
-      ),
-      home: const GroceryList(),
+      title: 'Great Places',
+      theme: theme,
+      home: const PlacesScreen(),
     );
   }
 }
