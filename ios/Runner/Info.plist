@@ -48,10 +48,12 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Pick your fvourite place image.</string>
+	<string>Pick your favourite place image.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Take your fvourite place image.</string>
+	<string>Take your favourite place image.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Record your fvourite place image.</string>
+	<string>Record your favourite place image.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Get your location for favourite place.</string>
 </dict>
 </plist>

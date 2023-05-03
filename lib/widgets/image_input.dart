@@ -3,9 +3,9 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class ImageInput extends StatefulWidget {
-  final Function(File image) onPickImage;
-
   const ImageInput({super.key, required this.onPickImage});
+
+  final Function(File image) onPickImage;
 
   @override
   State<ImageInput> createState() => _ImageInputState();
@@ -34,9 +34,11 @@ class _ImageInputState extends State<ImageInput> {
       width: double.infinity,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          border: Border.all(
-              width: 1,
-              color: Theme.of(context).colorScheme.primary.withOpacity(.2))),
+        border: Border.all(
+          width: 1,
+          color: Theme.of(context).colorScheme.primary.withOpacity(.2),
+        ),
+      ),
       child: _selectedImage != null
           ? GestureDetector(
               onTap: _takePicture,
