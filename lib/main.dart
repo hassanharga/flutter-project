@@ -1,37 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import './screens/places.dart';
+import './features/tabs/screens/tabs_screen.dart';
+import './providers/language_provider.dart';
 
-final colorScheme = ColorScheme.fromSeed(
-  brightness: Brightness.dark,
-  seedColor: const Color.fromARGB(255, 102, 6, 247),
-  background: const Color.fromARGB(255, 56, 49, 66),
-);
+void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  runApp(const ProviderScope(child: MyApp()));
+}
 
-final theme = ThemeData.dark().copyWith(
-  useMaterial3: true,
-  colorScheme: colorScheme,
-  scaffoldBackgroundColor: colorScheme.background,
-  textTheme: GoogleFonts.ubuntuCondensedTextTheme().copyWith(
-    titleSmall: GoogleFonts.ubuntuCondensed(fontWeight: FontWeight.bold),
-    titleMedium: GoogleFonts.ubuntuCondensed(fontWeight: FontWeight.bold),
-    titleLarge: GoogleFonts.ubuntuCondensed(fontWeight: FontWeight.bold),
-  ),
-);
-
-void main() => runApp(const ProviderScope(child: MyApp()));
-
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final countryCode = ref.watch(languageProvider);
     return MaterialApp(
-      title: 'Great Places',
-      theme: theme,
-      home: const PlacesScreen(),
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale(countryCode),
+      title: 'Rateel',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
+        useMaterial3: true,
+      ),
+      home: const TabsScreen(),
     );
   }
 }
