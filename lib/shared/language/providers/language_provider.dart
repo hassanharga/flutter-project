@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../constants/constants.dart';
-import '../utils/translation.dart';
+import '../../constants/defines.dart';
+import '../../utils/translation.dart';
 
 class LanguageNotifier extends StateNotifier<String> {
   LanguageNotifier() : super(ARABIC) {

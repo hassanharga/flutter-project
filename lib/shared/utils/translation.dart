@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import './storage.dart';
+import '../../services/services.dart';
 import '../constants/constants.dart';
 
 AppLocalizations translate(BuildContext context) {
@@ -10,13 +10,13 @@ AppLocalizations translate(BuildContext context) {
 }
 
 Future<String> setAppLocale(String languageCode) async {
-  await setStringValue(LAGUAGE_CODE, languageCode);
+  await StorageService.setStringValue(LAGUAGE_CODE, languageCode);
   return languageCode;
 }
 
 Future<String> getAppLocale() async {
-  final code = await getStringValue(LAGUAGE_CODE, ARABIC);
-  return code;
+  final code = await StorageService.getStringValue(LAGUAGE_CODE, ARABIC);
+  return code!;
 }
 
 // Locale _locale(String languageCode) {

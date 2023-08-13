@@ -1,7 +1,71 @@
 {
-  "@_CLIENT": {},
-  "helloWorld": "Hello World!",
-  "hassan": "HaSsan",
   "@_Tabs": {},
-  "tabs": "Menu"
+  "tabs": "Menu",
+  "main": "Main",
+  "audioLib": "Library",
+  "quran": "Quran",
+  "azkarak": "Azkar",
+  "more": "More",
+  "@_Home": {},
+  "tools": "Rateel Tools",
+  "planWird": "Plan Wird",
+  "reciterVoice": "Reciter Voice",
+  "sebha": "Smart Sebha",
+  "favouriteDuaa": "Favourite Duaa",
+  "homeAzkarMsg1": "Your steps to God today",
+  "homeAzkarMsg2": "My servant continues to draw close to Me with supererogatory prayers until I love him",
+  "morningAzkar": "Morning Azkar",
+  "eveningAzkar": "Evening Azkar",
+  "qiblaDetect": "Detect Qibla",
+  "fajr": "Fajr",
+  "sunrise": "Shourouk",
+  "dhuhr": "Dhuhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "midnight": "Midnight",
+  "adanAfter": "Adan After",
+  "am": "AM",
+  "pm": "PM",
+  "hour": "hour",
+  "minute": "minute",
+  "second": "second",
+  "@_Prayers": {},
+  "prayersTitle": "مواقيت الصلاة",
+  "searchByCity": "Search by city",
+  "prayerRemaining": "Remaining for {salat}",
+  "@prayerRemaining": {
+    "placeholders": {
+      "salat": {
+        "type": "String",
+        "example": "Fajr"
+      }
+    }
+  },
+  "noCitites": "No cities found",
+  "adhanTime": "It's time for prayer {azan}",
+  "@adhanTime": {
+    "placeholders": {
+      "azan": {
+        "type": "String",
+        "example": "Fajr"
+      }
+    }
+  },
+  "timeNow": "{time} has entered",
+  "@timeNow": {
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "Midnight"
+      }
+    }
+  },
+  "@_Qibla": {},
+  "qiblaDirection": "Qibla Direction",
+  "north": "North",
+  "south": "South",
+  "east": "East",
+  "west": "West",
+  "directionNow": "Direction Now"
 }
